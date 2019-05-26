@@ -8,6 +8,20 @@ import com.gildedrose.items.ConjuredItem;
 
 public class ConjuredItemTest {
     @Test
+    public void conjuredItem_sellInPositive_ageTollTwo() {
+        ConjuredItem item = new ConjuredItem("item", 5, 5);
+
+        assertEquals(2, item.getAgeToll());
+    }
+
+    @Test
+    public void conjuredItem_sellInZero_ageTollDouble() {
+        ConjuredItem item = new ConjuredItem("item", 0, 5);
+
+        assertEquals(4, item.getAgeToll());
+    }
+
+    @Test
     public void age_sellInAndQualityPositive_sellInAndQualityLowered() {
         ConjuredItem item = new ConjuredItem("item", 5, 5);
 

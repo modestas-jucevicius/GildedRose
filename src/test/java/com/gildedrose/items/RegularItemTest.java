@@ -8,6 +8,20 @@ import com.gildedrose.items.RegularItem;
 
 public class RegularItemTest {
     @Test
+    public void regularItem_sellInPositive_ageTollTwo() {
+        RegularItem item = new RegularItem("item", 5, 5);
+
+        assertEquals(1, item.getAgeToll());
+    }
+
+    @Test
+    public void regularItem_sellInZero_ageTollDouble() {
+        RegularItem item = new RegularItem("item", 0, 5);
+
+        assertEquals(2, item.getAgeToll());
+    }
+
+    @Test
     public void age_sellInAndQualityPositive_sellInAndQualityLowered() {
         RegularItem item = new RegularItem("item", 5, 5);
 

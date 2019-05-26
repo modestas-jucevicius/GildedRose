@@ -8,6 +8,34 @@ import com.gildedrose.items.TicketItem;
 
 public class TicketItemTest {
     @Test
+    public void ticketItem_sellInAboveTen_ageTollOne() {
+        TicketItem item = new TicketItem("item", 11, 5);
+
+        assertEquals(1, item.getAgeToll());
+    }
+
+    @Test
+    public void TicketItem_sellInAboveFive_ageTollTwo() {
+        TicketItem item = new TicketItem("item", 7, 5);
+
+        assertEquals(2, item.getAgeToll());
+    }
+
+    @Test
+    public void TicketItem_sellInAboveZero_ageTollThree() {
+        TicketItem item = new TicketItem("item", 3, 5);
+
+        assertEquals(3, item.getAgeToll());
+    }
+
+    @Test
+    public void TicketItem_sellInZero_qualityZero() {
+        TicketItem item = new TicketItem("item", 0, 5);
+
+        assertEquals(0, item.getQuality());
+    }
+
+    @Test
     public void age_sellInElevenQualityPositive_sellInLoweredAndQualityAndRateIncreasedToTwo() {
         TicketItem item = new TicketItem("item", 11, 5);
 
