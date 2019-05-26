@@ -5,8 +5,12 @@ import java.util.List;
 
 import com.gildedrose.items.GildedRoseItem;
 
-class GildedRose {
+public class GildedRose {
     List<GildedRoseItem> items;
+
+    public GildedRose(List<GildedRoseItem> items) {
+        this.items = items;
+    }
 
     public GildedRose(GildedRoseItem[] items) {
         this.items = Arrays.asList(items);
